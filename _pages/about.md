@@ -17,7 +17,7 @@ Hello,
 
 My name is Florian Pasco, and I'm a student engineer in electronics, computer science and mechatronics, specializing in embedded systems, currently training at the École Nationale d'Ingénieurs de Brest (ENIB).
 
-Welcome to my portfolio. My portfolio is a website that lists all the projects I've worked on alone or with colleagues in the past. The aim of the portfolio is to give a clear overview of my skills. It also allows you to be redirected to the various web pages and/or documents linked to these projects (github page or technical manual in particular).
+Welcome to my portfolio. My portfolio is a website that lists all the projects I've worked on alone or with colleagues. The aim of the portfolio is to give a clear overview of my skills. It also allows you to be redirected to the various web pages and/or documents linked to these projects (github page or technical manual in particular).
 
 Outside the world of technology, I like to improve my skills in a variety of ways. My hobbies range from running to more social activities such as participating in various associations.
 
