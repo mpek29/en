@@ -3,7 +3,7 @@ layout: page
 title: Assembly line
 description: Specifications, Grafcet and HMI for an automated system
 img: assets/img/projects/assembly_line/main.jpg
-importance: 3
+importance: 4
 category: 2022
 ---
 

@@ -3,7 +3,7 @@ layout: page
 title: Safe opening system
 description: Digital state machine
 img: assets/img/projects/safe_opening_system/main.jpg
-importance: 4
+importance: 6
 category: 2022
 ---
 
