@@ -3,7 +3,7 @@ layout: page
 title: Sound recognition
 description: Mathematical tool in Python
 img: assets/img/projects/DTMF_code/main.jpg
-importance: 2
+importance: 3
 category: 2022
 ---
 During my 4th semester at ENIB, as part of the subject dedicated to Euclidean space, my colleagues and I had the opportunity to work on a project based on the DTMF code. This code is made up of a combination of frequencies used in conventional telephony. These frequencies are emitted when a key is pressed on a telephone keypad, resulting in the production of an instinctive sound for each key.
