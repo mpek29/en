@@ -3,7 +3,7 @@ layout: page
 title: UCI database
 description: SQLite3 database
 img: assets/img/projects/uci_bdd/main.jpg
-importance: 4
+importance: 5
 category: 2022
 ---
 
