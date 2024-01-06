@@ -3,7 +3,7 @@ layout: page
 title: Mixing system
 description: Supervision of an automated system
 img: assets/img/projects/mixing_system/main.jpg
-importance: 6
+importance: 7
 category: 2022
 ---
 
