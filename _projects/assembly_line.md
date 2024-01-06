@@ -3,8 +3,8 @@ layout: page
 title: Assembly line
 description: Specifications, Grafcet and HMI for an automated system
 img: assets/img/projects/assembly_line/main.jpg
-importance: 6
-category: 2022
+importance: 2
+category: 2021
 ---
 
 As part of my semester 3 automation course at ENIB, I had the opportunity to automate an industrial assembly line model using a Schneider Electric PLC (Programmable Logic Controller).
