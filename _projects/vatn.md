@@ -1,26 +1,26 @@
 ---
 layout: page
 title: VATN
-description: Jeu de Gestion en Java
+description: Java Management Game
 img: assets/img/projects/vatn/main.jpg
 importance: 4
 category: 2023
 git: https://git.enib.fr/f0pasco/cpo_01_groupe_1_v2
 ---
 
-Vatn nommé en référence au terme désignant l'eau en vieux norrois est un jeu de sensibilisation à la gestion de l'eau.
+Vatn, named after the Old Norse word for water, is a game designed to raise awareness of water management.
 
-Au sein de VATN, vous devez faire chaque jour un nouveau choix pour répondre à une problématique majeur de votre pays. Ce choix provoque une variation au sein des paramètres faisant gage de l'état de votre pays. Il est possible de les faire augmenter ou bien diminuer au fil des journées.
+In VATN, you have to make a new choice every day to respond to a major problem in your country. This choice causes a variation in the parameters that reflect the state of your country. You can increase or decrease them as the day goes by.
 
-L'objectif dans ce jeu est de faire perdurer son pays le plus de jour possible. Le pays s'effondrant lorsque la population de celui-ci atteint 0.
+The aim of the game is to keep your country alive for as many days as possible. The country collapses when its population reaches 0.
 
-Un menu principal permettra de débuter une nouvelle partie en rentrant un nom d'utilisateur ou bien d'en reprendre une précédente grâce à un fichier de sauvegarde.
+A main menu lets you start a new game by entering a user name, or resume a previous one using a save file.
 
-Un onglet de classement en fin de partie permettra au joueur de comparer ses résultats avec ceux des précédents joueurs (les classements seront le fruit des parties jouées en local).
+A ranking tab at the end of the game allows players to compare their results with those of previous players (the rankings are the result of games played locally).
 
-Pour finir, lors de votre partie, il sera possible d'afficher un graphique récapitulatif afin de mettre en perspective l'évolution des paramètres faisant gage de l'état de votre pays au fil des jours.
+Finally, during your game, you'll be able to display a summary graph to put into perspective the evolution of the parameters that show the state of your country over the days.
 
-Voici, ci-dessous, les différentes maquettes du jeu:
+Below are the game's various models:
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
