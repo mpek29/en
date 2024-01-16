@@ -15,7 +15,9 @@ social: true  # includes social icons at the bottom of the page
 
 Hello,
 
-My name is Florian Pasco, and I'm a student engineer in electronics, computer science and mechatronics, specializing in embedded systems, currently training at the École Nationale d'Ingénieurs de Brest (ENIB).
+My name is Florian Pasco, and I'm a master student in Engineering (Electronics, Computer Science and Mechatronics), currently training at the Brest National School of Engineering,.
+
+
 
 Welcome to my portfolio. My portfolio is a website that lists all the projects I've worked on alone or with colleagues. The aim of the portfolio is to give a clear overview of my skills. It also allows you to be redirected to the various web pages and/or documents linked to these projects (github page or technical manual in particular).
 
