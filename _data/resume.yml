@@ -31,7 +31,7 @@
 - title: Professional experience
   type: time_table
   contents:
-    - title: R&D technician working at a UGV project
+    - title: R&D technician intern working at a UGV project
       institution: AgriProTech, Quimperlé, France
       year: 06/26/23 - 09/01/23
       description:
@@ -39,7 +39,7 @@
         - Creation of electronic schematics and integration into the drone.
         - Installation of an RTK GPS (use of a Raspberry Pi) and compass for autonomous navigation.
 
-    - title: Construction worker (Work experience)
+    - title: Construction worker intern
       institution: LE DANVIC Constructions, Inguiniel, France
       year: 01/22
       description:
