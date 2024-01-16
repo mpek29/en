@@ -15,7 +15,7 @@ social: true  # includes social icons at the bottom of the page
 
 Hello,
 
-My name is Florian Pasco, and I'm a master student in Engineering (Electronics, Computer Science and Mechatronics), currently training at the Brest National School of Engineering,.
+My name is Florian Pasco, and I'm a master student in Engineering (Electronics, Computer Science and Mechatronics), currently training at the Brest National School of Engineering in France.
 
 
 
