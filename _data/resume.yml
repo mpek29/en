@@ -20,7 +20,7 @@
       value: RTOS, CAD(Fusion, Catia), ARM CPU arch. (STM32), C/C++, Circuit sim. (SPICE), Python, TDB equipment, TkInter, GitLab/GitHub, Arduino, Raspberry Pi, SPI/I²C, 3D printing, bash/shell, RTL (VHDL), Office (PPT, Excel, Word), PCB design, Java
     
     - name: Soft skills
-      value: Friendly,Time management,Teamwork,Automation fan,Dedicated,Maker mindset,Confident,Self-reliant,Methodical,Imaginative,Analytical,Inquisitive
+      value: Friendly, Time management, Teamwork, Automation fan, Dedicated, Maker mindset, Confident, Self-reliant, Methodical, Imaginative, Analytical, Inquisitive
     
     - name: Languages
       value: French(Native language), English(Proficient), German(Knowledge)
@@ -33,7 +33,7 @@
   contents:
     - title: R&D technician working at a UGV project
       institution: AgriProTech, Quimperlé, France
-      year: June 26 2023 - September 01 2023
+      year: 06/26/23 - 09/01/23
       description:
         - Use of the ArduPilot opensource firmware and associated software (Mission Planner and QGroundControl).
         - Creation of electronic schematics and integration into the drone.
@@ -41,38 +41,31 @@
 
     - title: Construction worker (Work experience)
       institution: LE DANVIC Constructions, Inguiniel, France
-      year: January 2022
+      year: 01/22
       description:
         - Learn the rudiments of masonry.
         - Mortar, concrete, formwork and chipboard laying.
         - Driving a dump truck, loading and transporting site equipment.
-
-- title: Volenteering
-  type: time_table
-  contents:
-    - title: Secretary | Responsible of one supplier
-      institution: ENIB cafeteria
-      year: February 15 2022 - February 22 2023
-      description:
-        - Preparation of student events.
-        - Ordering from some of our suppliers, stock management.
-    
-    - title: Volunteer
-      institution: Inguiniel Cycling Union
-      year: September 2008 - September 2019
-      description:
-        - Sale of sports event programs.
-        - Participation in maintaining safety around the edges of the circuit.
 
 - title: Training
   type: time_table
   contents:
     - title: Master’s Degree in Engineering (Electronics, Computer Science and Mechatronics)
       institution: Brest National School of Engineering, France
-      year: September 2020 - in progress
+      year: 09/20 - in progress
       description:
         - Diploma expected in 2025.
 
     - title: Baccalauréat, French secondary education diploma
       institution:
       year: June 2020
+
+- title: Volenteering
+  type: time_table
+  contents:
+    - title: Secretary | Responsible of one supplier
+      institution: ENIB cafeteria
+      year: 01/15/22 - 02/22/23
+      description:
+        - Preparation of student events.
+        - Ordering from some of our suppliers, stock management.
