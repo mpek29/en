@@ -3,6 +3,7 @@ layout: page
 title: Open source Bluetooth Portable Speaker
 description: Designing firmware in C++, a pcb and a case
 img: assets/img/projects/portable_speaker/main.jpg
+git: https://github.com/mpek29/portable_speaker
 importance: 1
 category: 2024
 ---
