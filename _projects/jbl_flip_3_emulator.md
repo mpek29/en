@@ -8,7 +8,7 @@ importance: 1
 category: 2024
 ---
 
-# Introduction
+## Introduction
 Welcome to my portfolio page dedicated to my JBL Flip 3 emulator project. The aim of this project is to reproduce the tactile and sonic experience of this iconic portable speaker using both hardware and software developed by myself.
 
 Technical aspects:
@@ -19,7 +19,7 @@ Technical aspects:
 The system is modularly designed for ease of repair and maximum durability. I also took care to reuse components I already had in stock.
 I'd like to thank Adafruit, my main source of inspiration, notably through their “Aluminum Mounting Grid”, of which I printed a 3D copy with my Ender3, as well as for their excellent modules whose standard format I used.
 
-# Preparation phase
+## Preparation phase
 During this first phase of preparation, I made an inventory of all my components with a view to reusing them and not ordering new ones. I also took the time to extract the sound effects from the jbl flip 3. Here they are: found_bt.wav, maximum_volume_limit.wav, search_bt.wav, switching_off.wav and switching_on.wav.
 
 <div class="row">
