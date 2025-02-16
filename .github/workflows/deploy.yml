@@ -20,12 +20,11 @@ jobs:
     - name: Checkout README repository
       uses: actions/checkout@v3
       with:
-        repository: mpek29/MPek29  # Remplace par le repo correct si besoin
-        path: MPek29
+        repository: mpek29/MPek29
+        path: /tmp/MPek29
 
     - name: Sync README with about.md
-      run: |
-        cp MPek29/README.md _pages/about.md
+      run: cp /tmp/MPek29/README.md _pages/about.md
 
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
