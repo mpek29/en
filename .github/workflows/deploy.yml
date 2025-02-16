@@ -1,4 +1,4 @@
-name: deploy
+name: Deploy
 
 on:
   push:
@@ -16,20 +16,14 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-
-    - name: Checkout README repository
-      uses: actions/checkout@v3
       with:
-        repository: mpek29/MPek29
-        path: external_readme  
-
-    - name: Sync README with about.md
-      run: cp external_readme/README.md _pages/about.md
+        persist-credentials: false  # Évite les problèmes d'authentification
+        fetch-depth: 0  # Assure que tout l'historique est récupéré
 
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.0.2'
+        ruby-version: '3.1'  # Mise à jour pour éviter l'erreur rubygems
         bundler-cache: true
 
     - name: Fix Bundler and Gem issues
@@ -39,7 +33,7 @@ jobs:
         bundle update --bundler
         bundle install
 
-    - name: Install deps
+    - name: Install Dependencies
       run: npm install -g mermaid.cli
 
     - name: Setup deploy options
@@ -47,20 +41,22 @@ jobs:
       run: |
         git config --global user.name "GitHub Action"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        
         if [[ ${GITHUB_REF} = refs/pull/*/merge ]]; then
-          echo "SRC_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_OUTPUT
-          echo "NO_PUSH=--no-push" >> $GITHUB_OUTPUT
+          echo "SRC_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_ENV
+          echo "NO_PUSH=--no-push" >> $GITHUB_ENV
         elif [[ ${GITHUB_REF} = refs/heads/* ]]; then
-          echo "SRC_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
+          echo "SRC_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
         fi
-        echo "DEPLOY_BRANCH=gh-pages" >> $GITHUB_OUTPUT
+        echo "DEPLOY_BRANCH=gh-pages" >> $GITHUB_ENV
 
-    - name: Commit updated about.md (if changed)
+    - name: Check for uncommitted files
       run: |
-        git add _pages/about.md
-        git commit -m "Sync README.md to about.md" || echo "No changes to commit"
+        if [[ -n $(git status --porcelain) ]]; then
+          echo "❌ ERROR: Il y a des fichiers non commités !"
+          git status
+          exit 1
+        fi
 
     - name: Deploy website
-      run: yes | bash bin/deploy --verbose ${{ steps.setup.outputs.NO_PUSH }}
-                    --src ${{ steps.setup.outputs.SRC_BRANCH }} 
-                    --deploy ${{ steps.setup.outputs.DEPLOY_BRANCH }}
+      run: bash bin/deploy --verbose --src ${{ env.SRC_BRANCH }} --deploy ${{ env.DEPLOY_BRANCH }}
