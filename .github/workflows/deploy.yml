@@ -1,4 +1,4 @@
-name: Deploy
+name: deploy
 
 on:
   push:
@@ -16,48 +16,27 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-      with:
-        persist-credentials: false
-        fetch-depth: 0
-
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.1.6'
+        ruby-version: '3.0.2'
         bundler-cache: true
-
-    - name: Fix Bundler and Gem issues
+    - name: Install deps
       run: |
-        gem update --system
-        gem install bundler
-        bundle update --bundler
-        bundle install
-
-    - name: Install Dependencies
-      run: npm install -g @mermaid-js/mermaid-cli
-
-    - name: Setup Git config
+        npm install -g mermaid.cli
+    - name: Setup deploy options
+      id: setup
       run: |
         git config --global user.name "GitHub Action"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-    - name: Define Branch Variables
-      run: |
-        if [[ ${GITHUB_REF} = refs/pull/*/merge ]]; then
-          echo "SRC_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_ENV
-          echo "NO_PUSH=--no-push" >> $GITHUB_ENV
-        elif [[ ${GITHUB_REF} = refs/heads/* ]]; then
-          echo "SRC_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+        if [[ ${GITHUB_REF} = refs/pull/*/merge ]]; then # pull request
+          echo "SRC_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_OUTPUT
+          echo "NO_PUSH=--no-push" >> $GITHUB_OUTPUT
+        elif [[ ${GITHUB_REF} = refs/heads/* ]]; then # branch, e.g. master, source etc
+          echo "SRC_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
         fi
-        echo "DEPLOY_BRANCH=gh-pages" >> $GITHUB_ENV
-
-    - name: Check for uncommitted files
-      run: |
-        if [[ -n $(git status --porcelain) ]]; then
-          echo "❌ ERROR: Il y a des fichiers non commités !"
-          git status
-          exit 1
-        fi
-
-    - name: Deploy website
-      run: bash bin/deploy --verbose --src ${{ env.SRC_BRANCH }} --deploy ${{ env.DEPLOY_BRANCH }} --force
+        echo "DEPLOY_BRANCH=gh-pages" >> $GITHUB_OUTPUT
+    - name: Deploy website 
+      run:  yes | bash bin/deploy --verbose ${{ steps.setup.outputs.NO_PUSH }}
+                    --src ${{ steps.setup.outputs.SRC_BRANCH }} 
+                    --deploy ${{ steps.setup.outputs.DEPLOY_BRANCH }} 
