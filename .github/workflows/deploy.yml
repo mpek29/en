@@ -21,7 +21,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         repository: mpek29/MPek29
-        path: external_readme  # Cloner dans un sous-dossier du projet
+        path: external_readme  
 
     - name: Sync README with about.md
       run: cp external_readme/README.md _pages/about.md
@@ -31,6 +31,13 @@ jobs:
       with:
         ruby-version: '3.0.2'
         bundler-cache: true
+
+    - name: Fix Bundler and Gem issues
+      run: |
+        gem update --system
+        gem install bundler
+        bundle update --bundler
+        bundle install
 
     - name: Install deps
       run: npm install -g mermaid.cli
