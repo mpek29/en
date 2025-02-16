@@ -16,14 +16,27 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
+
+    - name: Checkout README repository
+      uses: actions/checkout@v3
+      with:
+        repository: mpek29/MPek29  # Remplace par le repo correct si besoin
+        path: MPek29
+
+    - name: Sync README with about.md
+      run: |
+        cp MPek29/README.md _pages/about.md
+
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: '3.0.2'
         bundler-cache: true
+
     - name: Install deps
       run: |
         npm install -g mermaid.cli
+
     - name: Setup deploy options
       id: setup
       run: |
@@ -36,7 +49,13 @@ jobs:
           echo "SRC_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
         fi
         echo "DEPLOY_BRANCH=gh-pages" >> $GITHUB_OUTPUT
-    - name: Deploy website 
-      run:  yes | bash bin/deploy --verbose ${{ steps.setup.outputs.NO_PUSH }}
+
+    - name: Commit updated about.md (if changed)
+      run: |
+        git add _pages/about.md
+        git commit -m "Sync README.md to about.md" || echo "No changes to commit"
+
+    - name: Deploy website
+      run: yes | bash bin/deploy --verbose ${{ steps.setup.outputs.NO_PUSH }}
                     --src ${{ steps.setup.outputs.SRC_BRANCH }} 
-                    --deploy ${{ steps.setup.outputs.DEPLOY_BRANCH }} 
+                    --deploy ${{ steps.setup.outputs.DEPLOY_BRANCH }}
