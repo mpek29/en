@@ -17,13 +17,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
       with:
-        persist-credentials: false  # Évite les problèmes d'authentification
-        fetch-depth: 0  # Assure que tout l'historique est récupéré
+        persist-credentials: false
+        fetch-depth: 0
 
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: '3.1'  # Mise à jour pour éviter l'erreur rubygems
+        ruby-version: '3.1.6'
         bundler-cache: true
 
     - name: Fix Bundler and Gem issues
@@ -34,14 +34,15 @@ jobs:
         bundle install
 
     - name: Install Dependencies
-      run: npm install -g mermaid.cli
+      run: npm install -g @mermaid-js/mermaid-cli
 
-    - name: Setup deploy options
-      id: setup
+    - name: Setup Git config
       run: |
         git config --global user.name "GitHub Action"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        
+
+    - name: Define Branch Variables
+      run: |
         if [[ ${GITHUB_REF} = refs/pull/*/merge ]]; then
           echo "SRC_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_ENV
           echo "NO_PUSH=--no-push" >> $GITHUB_ENV
@@ -59,4 +60,4 @@ jobs:
         fi
 
     - name: Deploy website
-      run: bash bin/deploy --verbose --src ${{ env.SRC_BRANCH }} --deploy ${{ env.DEPLOY_BRANCH }}
+      run: bash bin/deploy --verbose --src ${{ env.SRC_BRANCH }} --deploy ${{ env.DEPLOY_BRANCH }} --force
